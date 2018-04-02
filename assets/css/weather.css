@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani');
+
+body {
+    background: #6ec8f8;
+    font-family: 'Rajdhani', sans-serif;
+    text-align: center; 
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+p {
+    font-family: 'Rajdhani', sans-serif;
+    color: black;
+}
+
+h1, h2, h3, h4 {
+    color: #f3f3f3;
+}
+
+.container {
+    background-color: #1c92d2;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    /* border: 1px solid black; */
+    border-radius: 1.5em;
+    width: 300px;
+    height: auto;
+    margin: -200px 0 0 -150px;
+    box-shadow: -3px 7px 50px black;
+}
+
+.button {
+    background-color: #1c92d2;
+    border-radius: 0.25em;
+    border: 1px solid #6ec8f8;
+    box-shadow: -1px 1px 15px black;
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+    width: 75px;
+    height: auto;
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: none;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+ }
+ 
+ :-moz-placeholder {
+    text-align: center;  
+    font-family: 'Rajdhani', sans-serif;
+ }
+ 
+ ::-moz-placeholder {
+    text-align: center; 
+    font-family: 'Rajdhani', sans-serif; 
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+    font-family: 'Rajdhani', sans-serif;
+ }
+
+#weather {
+    padding-top: 8px;
+    font-size: 20px;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+

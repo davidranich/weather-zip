@@ -1,0 +1,39 @@
+<!DOCTYPE hmtl>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Zip!</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/weather.css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+<i class="fas fa-cloud fa-5x" style="color: white; text-align: center;"></i><br>
+<h1>Weather Zip</h1>
+<p>Enter your zip code below to see the current weather in that area!</p>
+<div id="weather">
+<input placeholder="example: 48038" class="form-control" v-model="zipCode" @keyup.enter="getWeather(zipCode)"><br>
+<button type="submit" class="button" v-on:click="getWeather(zipCode)">Zip!</button><br>
+<br>
+<div class="hidden"
+    v-bind:class="{ show: isShown }">
+    <hr>
+<p><h3 style="color: white;">{{ cityName }}, {{ stateName }}</h3>
+    <img v-bind:src="weatherIcon"><br>
+ <strong style="font-size: 24px;">{{ currentTemp | round }}°F</strong><br>
+ <span style="color: white; font-size: 16px;">{{ weatherDescription }}</span><br>
+<span style="color: white; font-size: 18px;">Feels like</span> <strong>{{ feelsLike | round }}°F</strong></p>
+</div>
+</div>
+</div>
+
+</body>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+<script src="/js/weather.js"></script>
+
+</html>
