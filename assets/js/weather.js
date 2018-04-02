@@ -26,7 +26,7 @@ var weather = new Vue({
                 alert("That zip code is invalid!");
                 return;
             }
-            axios.get(`https://api.apixu.com/v1/current.json?key=0d5c3762373b4f199c8145937182003&q=${zipCode}`)
+            axios.get(`https://api.apixu.com/v1/current.json?key=[key]&q=${zipCode}`)
                 .then((response) => {
                     var txt = response.data;
                     this.cityName = txt.location.name;
