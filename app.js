@@ -20,19 +20,10 @@ app.use(express.static(path.join(__dirname, 'assets')));
 
 app.set('view engine', 'ejs');
 
-// route
+// routes
 
-app.get('/', function(req, res){
-    res.render('index');
-});
-
-app.use(function(request, response, next) {
-    response.status(404);
-    response.render('404');
-});
+require('./routes')(app);
 
 app.listen(port);
 
-// For dev server
-
-console.log('http://localhost:8888/');
+console.log(`Listening for port: ${port}`);
