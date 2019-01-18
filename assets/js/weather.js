@@ -7,6 +7,8 @@ Vue.config.silent = true;
 
 var weather = new Vue({
     el: '#weather',
+
+    // by default, the data is empty for zip, city name, etc.
     data: {
         displayName: "Weather Zip",
         zipCode: '',
@@ -21,21 +23,24 @@ var weather = new Vue({
         weatherIcon: ''
     },
     methods: {
+
+        // when the submit button is pressed, it fires off this function
+
         getWeather: function(zipCode) {
             if (zipCode === '') {
                 alert("That zip code is invalid!");
                 return;
             }
             axios.get(`https://api.apixu.com/v1/current.json?key=[key]&q=${zipCode}`)
-                .then((response) => {
-                    var txt = response.data;
-                    this.cityName = txt.location.name;
-                    this.stateName = txt.location.region;
-                    this.currentTemp = txt.current.temp_f;
-                    this.feelsLike = txt.current.feelslike_f;
-                    this.weatherDescription = txt.current.condition.text;
-                    this.weatherIcon = txt.current.condition.icon;
-                    this.isShown = true;
+                .then((response) => { // upon success, receives the data from API
+                    var txt = response.data; // now I begin filling in the empty props
+                    this.cityName = txt.location.name; // here
+                    this.stateName = txt.location.region; // here
+                    this.currentTemp = txt.current.temp_f; // here
+                    this.feelsLike = txt.current.feelslike_f; // here
+                    this.weatherDescription = txt.current.condition.text; // here
+                    this.weatherIcon = txt.current.condition.icon; // here
+                    this.isShown = true; // and here (this will let the browser know to switch the CSS display from hidden)
             }).catch(error => { alert("That zip code is invalid!"); });
         }
     },
